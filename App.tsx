@@ -8,17 +8,17 @@ import Footer from './src/components/Footer/Footer.native';
 const transactions = [
   {
     index: 1,
-    value: '1.500',
+    amount: '1.500',
     type: '↑ Entrada',
   },
   {
     index: 2,
-    value: '500',
+    amount: '500',
     type: '↓ Saída',
   },
   {
     index: 3,
-    value: '1.200',
+    amount: '1.200',
     type: '↑ Entrada',
   },
 ];

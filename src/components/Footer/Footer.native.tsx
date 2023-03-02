@@ -2,10 +2,19 @@ import React, { ReactElement } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 import { footerDisclaimer } from '../../config/Strings';
+import { getTestID } from '../../helpers/getTestIDHelper';
 
 const Footer = (): ReactElement => (
-  <View testID={'Footer:Wrapper'} style={styles.footerContainer}>
-    <Text testID={'Footer:Disclaimer'} style={styles.footerTitle}>
+  <View
+    accessible
+    accessibilityLabel="App Footer"
+    testID={getTestID('test_id__footer')}
+    style={styles.footerContainer}>
+    <Text
+      accessible
+      accessibilityLabel={footerDisclaimer}
+      testID={getTestID('test_id__footer-disclaimer')}
+      style={styles.footerTitle}>
       {footerDisclaimer}
     </Text>
   </View>

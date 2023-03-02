@@ -1,13 +1,14 @@
 import React, { ReactElement } from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
 
-import Transaction from '../Transaction/Transaction.native';
-
 import { sectionTitle } from '../../config/Strings';
+import { getTestID } from '../../helpers/getTestIDHelper';
+
+import Transaction from '../Transaction/Transaction.native';
 
 interface Transaction {
   index: number;
-  value: string;
+  amount: string;
   type: string;
 }
 
@@ -17,22 +18,18 @@ interface Props {
 
 const Transactions = ({ transactions }: Props): ReactElement => (
   <View
-    accessible
-    accessibilityLabel="Transactions:Wrapper"
-    testID={'Transactions:Wrapper'}
+    testID={getTestID('test_id__transaction-section-card')}
     style={styles.sectionContainer}>
     <Text
-      accessible
-      accessibilityLabel="Transactions:Title"
-      testID={'Transactions:Title'}
+      testID={getTestID('test_id__transaction-section-title')}
       style={styles.sectionTitle}>
       {sectionTitle}
     </Text>
-    <ScrollView testID={'Transactions:List'}>
+    <ScrollView testID={getTestID('test_id__transaction-section-list')}>
       {transactions.map((transaction, index) => (
         <Transaction
           key={index}
-          value={transaction.value}
+          amount={transaction.amount}
           type={transaction.type}
         />
       ))}

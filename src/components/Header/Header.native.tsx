@@ -2,10 +2,11 @@ import React, { ReactElement } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 import { headerTitle } from '../../config/Strings';
+// import { getTestID } from '../../helpers/getTestIDHelper';
 
 const Header = (): ReactElement => (
-  <View testID={'header-wrapper'} style={styles.headerContainer}>
-    <Text testID={'header-title'} style={styles.headerTitle}>
+  <View testID={'test_id__header'} style={styles.headerContainer}>
+    <Text testID={'test_id__header-text'} style={styles.headerTitle}>
       {headerTitle}
     </Text>
   </View>

@@ -1,22 +1,24 @@
 import React, { ReactElement } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
+import { getTestID } from '../../helpers/getTestIDHelper';
+
 interface Props {
-  value: string;
+  amount: string;
   type: string;
 }
 
-const Transaction = ({ value, type }: Props): ReactElement => (
+const Transaction = ({ amount, type }: Props): ReactElement => (
   <View
-    testID={'com.pocreactnativetestid:id/transaction-wrapper'}
+    testID={getTestID('test_id__transaction-item')}
     style={styles.articleContainer}>
     <Text
-      testID={'com.pocreactnativetestid:id/transaction-title'}
+      testID={getTestID('test_id__transaction-amount')}
       style={styles.articleTitle}>
-      {`R$ ${value},00`}
+      {`R$ ${amount},00`}
     </Text>
     <Text
-      testID={'com.pocreactnativetestid:id/transaction-category'}
+      testID={getTestID('test_id__transaction-type')}
       style={styles.articleCategory}>
       {type}
     </Text>
